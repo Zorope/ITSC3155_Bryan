@@ -22,8 +22,10 @@ def odd_range(num1, num2):
 # otherwise return False
 def has_lower_case(s):
   # YOUR CODE HERE
-  
-  return
+  for x in s:
+    if x.islower():
+      return True
+  return False
 
 # Part C. fizz_buzz
 # Define a function fizz_buzz(num) that takes an integer num

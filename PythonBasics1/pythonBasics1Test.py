@@ -16,8 +16,8 @@ def test(got, expected):
 # Calls the functions in pythonBasics1 with interesting inputs.
 def main():
     # set which functions to test
-    check_odd_range = True
-    check_has_lower_case = False
+    check_odd_range = False
+    check_has_lower_case = True
     check_fizz_buzz = False
 
     if check_odd_range:
