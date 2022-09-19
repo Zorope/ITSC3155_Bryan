@@ -12,8 +12,8 @@ def test(got, expected):
 
 def main():
     # set which functions to test
-    check_count_threes = True
-    check_longest_consecutive_repeating_char = False
+    check_count_threes = False
+    check_longest_consecutive_repeating_char = True
     check_is_palindrome = False
 
     if check_count_threes:
