@@ -17,6 +17,12 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.starts_with_non_number("# is used to comment a line in Python"), True)
 
+        self.assertEqual(pythonBasics3.starts_with_non_number("10 days a week"), False)
+
+        self.assertEqual(pythonBasics3.starts_with_non_number("29 dogs in the daycare"), False)
+
+        self.assertEqual(pythonBasics3.starts_with_non_number("fifty dollars a year"), True)
+
         # Please add three more test cases following the order above
 
 #Test case for multiple_words
