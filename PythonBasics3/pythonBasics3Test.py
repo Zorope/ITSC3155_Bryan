@@ -38,6 +38,12 @@ class TestPythonBasicsOne(unittest.TestCase):
 
         self.assertEqual(pythonBasics3.multiple_words(" one-sided? "), False)
 
+        self.assertEqual(pythonBasics3.multiple_words("One day it rained"), True)
+
+        self.assertEqual(pythonBasics3.multiple_words("WinterBreak"), False)
+
+        self.assertEqual(pythonBasics3.multiple_words("Lovely Night"), True)
+
         # Please add three more test cases following the order above
 
 
