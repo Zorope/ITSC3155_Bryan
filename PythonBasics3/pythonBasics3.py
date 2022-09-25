@@ -29,7 +29,7 @@ def starts_with_non_number(s):
 # with at least one character on either side!
 def multiple_words(s):
   # YOUR CODE HERE
-  x = re.search('[\da-zA-Z]\s[\da-zA-Z]',s)
+  x = re.search('[\da-zA-Z]\s[\da-zA-Z]', s)
   if x == None:
     return False
   return True
@@ -44,5 +44,7 @@ def multiple_words(s):
 # Hint: the URL should start with https and end with one of the TLDs
 def reserved_us_tld(s):
   # YOUR CODE HERE
-  
-  return
+  x = re.search('^https.*(gov|mil|edu)$', s)
+  if x == None:
+    return False
+  return True
