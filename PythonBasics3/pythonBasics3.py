@@ -5,6 +5,8 @@
 # which is just a placeholder for your code.
 
 # import regular expression module
+from asyncio.windows_events import NULL
+from contextlib import nullcontext
 import re
 
 # # Part A. starts_with_non_number
@@ -14,8 +16,10 @@ import re
 # Note: Be sure to use RegEx!
 def starts_with_non_number(s):
   # YOUR CODE HERE
-
-  return
+  x = re.search('^\d', s)
+  if x == None:
+    return True
+  return False
 
 # # Part B. multiple_words
 # Define a function multiple_words(s) that takes a string and returns true
