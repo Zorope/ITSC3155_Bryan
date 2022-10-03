@@ -26,19 +26,24 @@ def count_threes(n):
   maxCount = 0
   current = 0
   currentID = 0
+  # loops through the string
   for i in n:
+    # if string is equal to 3 than we update our dictionary
     if i == '3':
       countThree += 1
       up_dict = {"3":countThree}
       multiples.update(up_dict)
+    # if string is equal to 6 than we update our dictionary
     elif i == '6':
       countSix += 1
       up_dict = {"6":countSix}
       multiples.update(up_dict)
+    # if string is equal to 9 than we update our dictionary
     elif i == '9':
       countNine += 1
       up_dict = {"9":countNine}
       multiples.update(up_dict)
+  # Checks each value and sets currentID to the key with the most cases of showing up
   for key,value in multiples.items():
     current = value
     if current > maxCount:
@@ -59,23 +64,31 @@ def longest_consecutive_repeating_char(s):
   counter = 0
   maxCount = 0
   currentID = ""
+  # Loops through string
   for x in s:
+    # Checks if current character is equal to last character seen
     if x == lastChar:
+      # If counter is 1 than we create a instance of the letter in the dictionary
       if counter == 1:
         consec[x] = counter
+      # Otherwise we just update the amount of times it is seen and update the dictionary
       counter += 1
       up_dict = {x:counter}
       consec.update(up_dict)
+    # If it isn't than it keeps track of new letter
     else:
       counter = 1
       lastChar = x
+  # Loops through the dictionary
   for key,value in consec.items():
     current = value
     currentID = key
+    # If the current value is bigger than the previously stored value we replace the last list with the newly updated one
     if current > maxCount:
       maxCount = current
       finalConsec.clear()
       finalConsec.append(currentID)
+    # If their the same size we just add them to the same list
     elif current == maxCount:
       finalConsec.append(currentID)
   return finalConsec
