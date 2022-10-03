@@ -11,15 +11,40 @@
 # to n (including n).
 
 import string
+from typing import final
 
 
 def count_threes(n):
   # YOUR CODE HERE
-  count = 0
-  for i in range(0,n+1):
-    if i%3 == 0 and i !=0:
-      count = count+1
-  return count
+  multiples = {}
+  multiples["3"] = 0
+  multiples["6"] = 0
+  multiples["9"] = 0
+  countThree = 0
+  countSix = 0
+  countNine = 0
+  maxCount = 0
+  current = 0
+  currentID = 0
+  for i in n:
+    if i == '3':
+      countThree += 1
+      up_dict = {"3":countThree}
+      multiples.update(up_dict)
+    elif i == '6':
+      countSix += 1
+      up_dict = {"6":countSix}
+      multiples.update(up_dict)
+    elif i == '9':
+      countNine += 1
+      up_dict = {"9":countNine}
+      multiples.update(up_dict)
+  for key,value in multiples.items():
+    current = value
+    if current > maxCount:
+      maxCount = current
+      currentID = key
+  return int(currentID)
 
 
 # Part B. longest_consecutive_repeating_char
@@ -27,20 +52,33 @@ def count_threes(n):
 # a string s and returns the character that has the longest consecutive repeat.
 def longest_consecutive_repeating_char(s):
   # YOUR CODE HERE
+  consec = {}
+  finalConsec = []
   lastChar = ""
   finaChar = ""
   counter = 0
   maxCount = 0
+  currentID = ""
   for x in s:
     if x == lastChar:
+      if counter == 1:
+        consec[x] = counter
       counter += 1
-      if counter > maxCount:
-        maxCount = counter
-        finalChar = x
+      up_dict = {x:counter}
+      consec.update(up_dict)
     else:
       counter = 1
       lastChar = x
-  return finalChar
+  for key,value in consec.items():
+    current = value
+    currentID = key
+    if current > maxCount:
+      maxCount = current
+      finalConsec.clear()
+      finalConsec.append(currentID)
+    elif current == maxCount:
+      finalConsec.append(currentID)
+  return finalConsec
 
 
 # Part C. is_palindrome
