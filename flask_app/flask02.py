@@ -15,6 +15,11 @@ def index():
     a_user = {'name': 'Bryan', 'email': 'bryan@uncc.edu'}
     return render_template('index.html', user = a_user)
 
+@app.route('/notes')
+def get_notes():
+    notes = {1:{'title': 'first note', 'text': 'this is my first note', 'date': '10-1-2020'},
+            2:{'title': 'Second note', 'text': 'this is my second note', 'date': '10-2-2020'}}
+    return render_template('notes.html', notes=notes)
 
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)
 
