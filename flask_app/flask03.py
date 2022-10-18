@@ -37,7 +37,8 @@ def new_note():
     print('request method is', request.method)
     a_user = {'name': 'Mogli', 'email': 'mogli@uncc.edu'}
     if request.method == 'POST':
-        return '<h1> POST method used for this request </h1>'
+        request_data = request.form
+        return f"data: {request_data} !"
     else:
         return render_template('new.html', user=a_user)
 
