@@ -36,7 +36,7 @@ def index():
 def get_notes():
     a_user = db.session.query(User).filter_by(email='mogli@uncc.edu')
     my_notes = db.session.query(Note).all()
-    return render_template('note.html', note=my_notes, user=a_user)
+    return render_template('notes.html', notes=my_notes, user=a_user)
 
 @app.route('/notes/<note_id>')
 def get_note(note_id):
