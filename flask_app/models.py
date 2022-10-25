@@ -11,7 +11,7 @@ class Note(db.Model):
         self.text = text
         self.date = date
 
-class User(db.model):
+class User(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     name = db.Column("name", db.String(100))
     email = db.Column("email", db.String(100))
