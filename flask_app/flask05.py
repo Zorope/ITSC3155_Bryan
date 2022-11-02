@@ -74,7 +74,7 @@ def update_note(note_id):
         note.text = text
 
         db.session.add(note)
-        db.session.commit
+        db.session.commit()
         return redirect(url_for('get_notes'))
     else:
         a_user = db.session.query(User).filter_by(email='mogli@uncc.edu').one()
